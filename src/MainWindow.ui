@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ui version="4.8.0">
-  <class name="MainWindow"/>
-  <widgets>
-    <widget class="QtMainWindow" name="MainWindow">
-      <property name="geometry">
-        <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>800</width>
-          <height>600</height>
-        </rect>
-      </property>
-      <layout>
-        <vbox orientation="vertical">
-          <item>
-            <widget class="QpushButton" name="scanButton">
-              <property name="text">
-                <string>Scan</string>
-              </property>
-            </widget>
-            <widget class="QTableView" name="table"/>
-            <widget class="QProgressBar" name="progressBar"/>
-          </item>
-        </vbox>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget name="MainWindow" class="QMainWindow">
+    <property name="windowTitle">
+      <string>StorageOptimizer</string>
+    </property>
+    <widget name="centralWridget" class="WINDOW">
+      <layout class="qmainVbox" name="verticalLayout">
+        <item role="none">
+          <widget class="QpushButton" name="scanButton">
+            <property name="text">
+              <string>Scan</string>
+            </property>
+          </widget>
+        </item>
+        <item role="none">
+          <widget class="QTableView" name="table"/>
+        </item>
+        <item role="none">
+          <widget class="QProgressBar" name="progressBar"/>
+        </item>
       </layout>
-      <statusbar class="QStatusBar" name="status"/>
     </widget>
-  </widgets>
+    <statusbar name="statusBar"/>
+  </widget>
+  <resources/>
+  <connections/>
 </ui>
