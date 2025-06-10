@@ -2,7 +2,7 @@
 <ui version="4.8.0">
   <class name="MainWindow"/>
   <widgets>
-    <widget class="MAOWIndow" name="MainWindow">
+    <widget class="QtMainWindow" name="MainWindow">
       <property name="geometry">
         <rect>
           <x>0</x>
@@ -14,10 +14,12 @@
       <layout>
         <vbox orientation="vertical">
           <item>
-            <pushutton name="scanButton"/>
-          </item>
-          <item>
-            <tableview name="resultTable"/>
+            <widget class="QpushButton" name="scanButton">
+              <property name="text">
+                <string>Scan</string>
+              </property>
+            </widget>
+            <widget class="QTableView" name="table"/>
           </item>
         </vbox>
       </layout>
