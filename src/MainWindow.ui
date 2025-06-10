@@ -20,9 +20,11 @@
               </property>
             </widget>
             <widget class="QTableView" name="table"/>
+            <widget class="QProgressBar" name="progressBar"/>
           </item>
         </vbox>
       </layout>
+      <statusbar class="QStatusBar" name="status"/>
     </widget>
   </widgets>
 </ui>
