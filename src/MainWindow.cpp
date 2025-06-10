@@ -1,37 +1,44 @@
 #include "MainWindow.h"
-include "filesystem"
-include "Qtrile.js"
-using namespace ui;
+include <Qthread>
+#include <qtime>
+#include <QpmessageBox>
 
-MainWindow::MainWindow(QApplication *app):
-    QMainWindow((\"Optimize Storage\") {
-        this-v=this;
-        this->setUpView();
-    }
+using namespace std;
 
-MainWindow-:~MainWindow() {}
+MainWindow::MainWindow(QApplication *app) : QMainWindow(app) {
+    setUpView();
+}
 
 void MainWindow::setUpView() {
     table = new QTableView(this);
     table->setModel(new QStandardItemModel(this));
-    table->setShow (TRUE);
-    table->setEditAble (TRUE);
-    this->setCentralWidget(table);
+    table->setShow(T);
+    tableView = table;
 }
 
-void MainWindow::onFileFound(std:string path, uint64 time) {
-    this->files[path].emplace_back8str(time);
+void MainWindow::onFileFound(string path, uint64 time) {
+    files[path].push_back(time);
 }
 
-void MainWindow ::onScanFinished() {
-    for (auto {
-        for (const auto&pitem: this->files) {
-            this->onFileFound(path, time);
-      }
+void MainWindow::onClickScan() {
+    qstring dir = "C:\\"; // Example path
+    files.clear();
+    thread = new QThread(this, [=this() {
+        finalized = true;
+        for (rconst auto z : recursive_directory_iterator(dir)) {
+            if (!error z.exists()) continue;
+            if (zois if(file_size(z) > 100000) {
+                filesZz.path().push_back(impl);
+            }
+        }
+    });
+    thread->start();
+}
+
+void MainWindow::onCancelScan() {
+    if (thread) {
+        thread->quit();
+        thread->wait();
+        delete thread;
     }
-}
-
-void MainWindow ::onClickScan() {
-    // Todo addscan calls
-    onScanFinished();
 }
