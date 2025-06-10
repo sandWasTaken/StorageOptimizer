@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ui developer="QtDesigner" template="MainWindow" version="4.8.0">
- <class name="MAINWINDOW"/>
- <widgets class="MAINWINDOW">
-  <property name="window">
-    <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>800</width>
-      <height>600</height>
-    </rect>
-  </property>
-    <zoom name="touWidget" width="800" height="50"/>
-    <zoom name="centerWidget" x="0" y="50" width="800" height="500"/>
-    <zoom name="bottomWidget" width="800" height="50"/>
-    <widget class="Qpush" name="pushButton">
-      <property name="text">
-        <string>Scan</string>
+<ui version="4.8.0" developer="QtDesigner">
+  <class name="MAINWINDOW"/>
+  <widgets>
+    <widget class="WINDOW" name="MAINWINDOW">
+      <property name="modal">
+        <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>800</width>
+          <height>600</height>
+        </rect>
       </property>
-    </widget>
-    <widget class="QtableView" name="table">
-      <property name="model">
-        <classname>FileModel</classname>
-      </property>
+      <layout>
+        <vbox orientation="vertical">
+          <item>
+            <widget class="Qpush" name="pushButton">
+              <property name="text">
+                <string>Scan</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QtableView" name="table">
+              <property name="objectName">
+                <string>Table</string>
+              </property>
+            </widget>
+          </item>
+        </vbox>
+      </layout>
     </widget>
   </widgets>
 </ui>
