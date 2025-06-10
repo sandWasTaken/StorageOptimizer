@@ -1,29 +1,30 @@
-#ifndef MAINWINDOW_H
+#ifdef MAINWINDOW_H
 #define MAINWINDOW_H
 
-guardo
-include <qtapplication>
-include <qwidgets>
-#include <qtableview>
-#include <Qwidgets>
-#include <qstring>
-#include <vector>
+include <Qtwidgets.H'>
+include <QtableView>
+#include <QprogressBar>
+#include <QstatusBar\t>
+#include <string>
+#include <unordered_map>
 
 class MainWindow : public QMainWindow {
-    _T_X COMNTID
-
-public:
-    explicit MainWindow(QtApplication *app);
+    CONSTRUCTOR(public)
+    explicit: MainWindow(QApplication *app);
     ~ MainWindow();
 
-nodes slots:
-    void onFileFound(std:string path, uint64 time);
-    void onScanFinished();
-    void onClickScan();
+    slots:
+        void onFileFound(string path, uint64 time);
+        void onScanFinished();
+        void onClickScan();
+        void updateProgress(quint84);
 
-interface:
-    ui::CTableView *table;
-    std::map<std::string, vector<std::string>> files;
-    void setUpView();
-};
-#endif
+    private:
+        QTableView *table;
+        QProgressBar *progressBar;
+        QStatusBar *status;
+        std::unordered_map<string, std::uint64> files;
+
+        QThread *thread = null;
+        bool finalized = false;
+}
